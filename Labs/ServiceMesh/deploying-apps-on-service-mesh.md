@@ -585,13 +585,6 @@ $ oc -n istio-system delete secret istio.default
 oc delete secret istio.default
 ```
 
-Also delete the running `galley` pods so they inherit the certificate chain to authenticate future requests
-
-```
-$ oc -n istio-system delete $(oc -n istio-system get po -l app=galley -o name)
-pod "istio-galley-7485b8fcb4-6hjx2" deleted
-```
-
 ### Verifying the Certificates
 
 Use the Bookinfo sample application to verify your certificates are mounted correctly. First, retrieve the mounted certificates. Then, verify the certificates mounted on the pod.
