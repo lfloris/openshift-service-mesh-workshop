@@ -122,8 +122,6 @@ NAME    READY   STATUS            PROFILES      VERSION   AGE
 basic   9/9     ComponentsReady   ["default"]   2.0.2     35h
 ```
 
-Ensure the `STATUS` is `InstallSuccessful` before moving on. This may take some time.
-
 Check the status of the pods to ensure they are all in `Running` status. This may take some time.
 
 ```
