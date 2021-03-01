@@ -133,7 +133,7 @@ grafana-7977c588d4-l7pm7               2/2     Running   0          9m46s
 istio-egressgateway-7988d4487d-k9vnw   1/1     Running   0          11m
 istio-ingressgateway-cfdfb66ff-27qbd   1/1     Running   0          11m
 istiod-basic-7d8ccd96f7-zv2bw          1/1     Running   0          11m
-jaeger-5ff9558fc6-67qhz                2/2     Running   0          34h
+jaeger-5ff9558fc6-67qhz                2/2     Running   0          10m
 kiali-766764d687-xhtzz                 1/1     Running   0          8m56s
 prometheus-d64765997-btzjs             3/3     Running   0          10m
 ```
