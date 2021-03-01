@@ -536,7 +536,7 @@ Switch back to the Kiali dashboard and we should now see that roughly 90% of the
 
 By default, Red Hat OpenShift Service Mesh generates self-signed root certificate and key, and uses them to sign the workload certificates. In the next few steps, we'll use an existing set of certificates and use these in the Bookinfo application.
 
-Retrieve the existing certificates from the [certs](certs/) directory.
+Retrieve the existing certificates from the [certs](certs/) directory (this requires you to have pulled the Git repository. See [Getting Started](../Getting-started/README.md) for instructions on how to do that)
 
 Create a ConfigMap from these certificates using the below command
 
