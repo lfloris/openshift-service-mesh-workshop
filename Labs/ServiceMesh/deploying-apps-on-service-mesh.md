@@ -621,7 +621,7 @@ The file /tmp/pod-cert-chain.pem contains the workload certificate and the CA ce
 Verify the root certificate is the same as the one specified by the Operator. Replace <path> with the path to your certificates.
 
 ```
-$ openssl x509 -in /home/ibmdemo/ibm-ocp-training/Labs/Lab16-ServiceMesh/certs/root-cert.pem -text -noout > /tmp/root-cert.crt.txt
+$ openssl x509 -in /home/ibmdemo/ibm-ocp-training/Labs/ServiceMesh/certs/root-cert.pem -text -noout > /tmp/root-cert.crt.txt
 
 $ openssl x509 -in /tmp/pod-root-cert.pem -text -noout > /tmp/pod-root-cert.crt.txt
 
@@ -635,7 +635,7 @@ Verify the CA certificate is the same as the one specified by Operator. Replace 
 ```
 $ sed '0,/^-----END CERTIFICATE-----/d' /tmp/pod-cert-chain.pem > /tmp/pod-cert-chain-ca.pem
 
-$ openssl x509 -in /home/ibmdemo/ibm-ocp-training/Labs/Lab16-ServiceMesh/certs/ca-cert.pem -text -noout > /tmp/ca-cert.crt.txt
+$ openssl x509 -in /home/ibmdemo/ibm-ocp-training/Labs/ServiceMesh/certs/ca-cert.pem -text -noout > /tmp/ca-cert.crt.txt
 
 $ openssl x509 -in /tmp/pod-cert-chain-ca.pem -text -noout > /tmp/pod-cert-chain-ca.crt.txt
 
@@ -649,7 +649,7 @@ Verify the certificate chain from the root certificate to the workload certifica
 ```
 $ head -n 21 /tmp/pod-cert-chain.pem > /tmp/pod-cert-chain-workload.pem
 
-$ openssl verify -CAfile <(cat /home/ibmdemo/ibm-ocp-training/Labs/Lab16-ServiceMesh/certs/ca-cert.pem /home/ibmdemo/ibm-ocp-training/Labs/Lab16-ServiceMesh/certs/root-cert.pem) /tmp/pod-cert-chain-workload.pem
+$ openssl verify -CAfile <(cat /home/ibmdemo/ibm-ocp-training/Labs/ServiceMesh/certs/ca-cert.pem /home/ibmdemo/ibm-ocp-training/Labs/ServiceMesh/certs/root-cert.pem) /tmp/pod-cert-chain-workload.pem
 /tmp/pod-cert-chain-workload.pem: OK
 ```
 
