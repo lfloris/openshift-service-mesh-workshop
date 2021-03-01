@@ -118,8 +118,8 @@ Use the following command to check the installation status
 
 ```
 $ oc get smcp -n istio-system
-NAME            READY   STATUS              TEMPLATE   VERSION   AGE
-basic-install   9/9     InstallSuccessful   default    v1.1      10m
+NAME    READY   STATUS            PROFILES      VERSION   AGE
+basic   9/9     ComponentsReady   ["default"]   2.0.2     35h
 ```
 
 Ensure the `STATUS` is `InstallSuccessful` before moving on. This may take some time.
@@ -582,6 +582,8 @@ To make sure the workloads add the new certificates promptly, delete the secrets
 
 ```
 $ oc -n istio-system delete secret istio.default
+oc delete secret istio.default
+$ oc -n bookinfo delete secret istio.default
 oc delete secret istio.default
 ```
 
