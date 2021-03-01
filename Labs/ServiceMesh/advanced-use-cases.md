@@ -117,6 +117,18 @@ root@dns's password:
 Redirecting to /bin/systemctl restart dnsmasq.service
 ```
 
+Once DNS changes are done you should be able to resolve `apps.dedicated.demo.ibmdte.net` to an IP.
+
+```
+nslookup apps.dedicated.demo.ibmdte.net
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	apps.dedicated.demo.ibmdte.net
+Address: 10.0.0.201
+```
+
 Now go to your browser and use the URL `http://apps.dedicated.demo.ibmdte.net/productpage`
 
 You should see the Bookinfo application page appear
