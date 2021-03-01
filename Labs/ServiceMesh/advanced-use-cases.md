@@ -72,7 +72,23 @@ In the `spec.gateways` section add a definition for a new gateway using the code
 You may already have a `gateways: {}` set, so be sure to place the `additionalIngress` object within `spec.gateways`, similar to the following
 
 ```
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: basic
+  namespace: istio-system
 spec:
+  addons:
+    grafana:
+      enabled: true
+    jaeger:
+      install:
+        storage:
+          type: Memory
+    kiali:
+      enabled: true
+    prometheus:
+      enabled: true
   gateways:
     additionalIngress:
       dedicated-gateway:
@@ -85,6 +101,27 @@ spec:
               minReplicas: 1
               targetCPUUtilizationPercentage: 95
             replicas: 1
+  policy:
+    type: Istiod
+  profiles:
+    - default
+  security:
+    certificateAuthority:
+      istiod:
+        privateKey:
+          rootCADir: /etc/cacerts
+        type: PrivateKey
+      type: Istiod
+    controlPlane:
+      mtls: true
+    dataPlane:
+      mtls: true
+  telemetry:
+    type: Istiod
+  tracing:
+    sampling: 10000
+    type: Jaeger
+  version: v2.0
 ```
 
 Select Save. 
