@@ -318,7 +318,7 @@ Use the following URL to access the Jaeger dashboard
 
 https://jaeger-istio-system.apps.demo.ibmdte.net
 
-Log in with `ibmuser`.
+Log in with `ibmadmin`.
 
 In the left pane of the Jaeger dashboard, from the Service menu, select "productpage" and click the Find Traces button at the bottom of the pane. A list of traces is displayed, as shown in the following image
 
