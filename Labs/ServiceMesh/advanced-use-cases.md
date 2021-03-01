@@ -56,6 +56,22 @@ As the `ibmadmin` user, edit the Service Mesh Control Plane in the GUI by naviga
 
 In the `spec.gateways` section add a definition for a new gateway using the code snippet below
 ```
+    additionalIngress:
+      dedicated-gateway:
+        enabled: true
+        runtime:
+          deployment:
+            autoScaling:
+              enabled: true
+              maxReplicas: 2
+              minReplicas: 1
+              targetCPUUtilizationPercentage: 95
+            replicas: 1
+```
+
+You may already have a `gateways: {}` set, so be sure to place the `additionalIngress` object within `spec.gateways`, similar to the following
+
+```
 spec:
   gateways:
     additionalIngress:
