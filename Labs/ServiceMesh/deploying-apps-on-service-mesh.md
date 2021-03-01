@@ -565,6 +565,8 @@ spec:
   security:
     controlPlane:
       mtls: true
+    dataPlane:
+      mtls: true
     certificateAuthority:
       type: Istiod
       istiod:
