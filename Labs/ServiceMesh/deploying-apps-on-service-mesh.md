@@ -128,19 +128,14 @@ Check the status of the pods to ensure they are all in `Running` status. This ma
 
 ```
 $ oc get pods -n istio-system
-NAME                                      READY   STATUS    RESTARTS   AGE
-grafana-664d8658b9-dj447                  2/2     Running   0          9m46s
-istio-citadel-64797dccf6-gvrgp            1/1     Running   0          11m
-istio-egressgateway-5fd76b5677-xfkpj      1/1     Running   0          10m
-istio-galley-7485b8fcb4-cdjcd             1/1     Running   0          10m
-istio-ingressgateway-75d5bb5b8f-hzt45     1/1     Running   0          10m
-istio-pilot-774c45f9d6-wg6pd              2/2     Running   0          10m
-istio-policy-7845f4467b-pcbmp             2/2     Running   0          10m
-istio-sidecar-injector-5678f8b95b-2hccf   1/1     Running   0          9m59s
-istio-telemetry-76999d8fb9-hk8cw          2/2     Running   0          10m
-jaeger-b4497bd7b-9zqdd                    2/2     Running   0          10m
-kiali-6bbccc6574-n54rn                    1/1     Running   0          8m56s
-prometheus-7f57bc8dff-mfcz4               2/2     Running   0          11m
+NAME                                   READY   STATUS    RESTARTS   AGE
+grafana-7977c588d4-l7pm7               2/2     Running   0          9m46s
+istio-egressgateway-7988d4487d-k9vnw   1/1     Running   0          11m
+istio-ingressgateway-cfdfb66ff-27qbd   1/1     Running   0          11m
+istiod-basic-7d8ccd96f7-zv2bw          1/1     Running   0          11m
+jaeger-5ff9558fc6-67qhz                2/2     Running   0          34h
+kiali-766764d687-xhtzz                 1/1     Running   0          8m56s
+prometheus-d64765997-btzjs             3/3     Running   0          10m
 ```
 
 ### Creating a Service Mesh Member
