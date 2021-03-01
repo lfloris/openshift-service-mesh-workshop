@@ -545,7 +545,7 @@ $ oc create secret generic cacerts -n istio-system --from-file=/home/ibmdemo/ibm
 secrets/cacerts created
 ```
 
-Now we need to edit the ServiceMeshControlPlane definition to disable the use of self-signed certificates. For this, use the command `oc -n istio-system edit smcp basic-install` as the `ibmadmin` user, then add the below code snippet under the `security` block
+Now we need to edit the ServiceMeshControlPlane definition to disable the use of self-signed certificates. For this, use the command `oc -n istio-system edit smcp basic` as the `ibmadmin` user, then add the below code snippet under the `security` block
 
 ```
 certificateAuthority:
