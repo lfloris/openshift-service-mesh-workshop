@@ -538,6 +538,8 @@ By default, Red Hat OpenShift Service Mesh generates self-signed root certificat
 
 Retrieve the existing certificates from the [certs](certs/) directory (this requires you to have pulled the Git repository. See [Getting Started](../Getting-started/README.md) for instructions on how to do that)
 
+Switch to the `ibmadmin` user to make changes to the control plane.
+
 Create a ConfigMap from these certificates using the below command
 
 ```
@@ -545,7 +547,7 @@ $ oc create secret generic cacerts -n istio-system --from-file=/home/ibmdemo/ibm
 secrets/cacerts created
 ```
 
-Now we need to edit the ServiceMeshControlPlane definition to disable the use of self-signed certificates. For this, use the command `oc -n istio-system edit smcp basic` as the `ibmadmin` user, then add the below code snippet under the `security` block
+Now we need to edit the ServiceMeshControlPlane definition to disable the use of self-signed certificates. For this, use the command `oc -n istio-system edit smcp basic`, then add the below code snippet under the `security` block
 
 ```
 certificateAuthority:
