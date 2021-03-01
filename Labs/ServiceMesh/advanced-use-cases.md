@@ -52,7 +52,7 @@ router-default-66dcdb948f-pvtt5           1/1     Running   0          51m
 
 Notice that we use a `routeSelector` here to only match routes that have the label `ingress=dedicated` set. This type of router sharding allows us to control how Ingress Controllers route traffic to target Routes.
 
-Edit the Service Mesh Control Plane in the GUI by navigating to Installed Operators > OpenShift Service Mesh then select the tab Istio Service Mesh Control Plane. Select `basic-install`, then the YAML tab and scroll down until you reach around line 635.
+As the `ibmadmin` user, edit the Service Mesh Control Plane in the GUI by navigating to Installed Operators > OpenShift Service Mesh in the `istio-system` project then select the tab Istio Service Mesh Control Plane. Select `basic`, then the YAML tab and scroll down until you reach around line 635 (or just minimize the managedFields block).
 
 In the `spec.gateways` section add a definition for a new gateway using the code snippet below
 ```
@@ -542,7 +542,13 @@ Naturally this process is going to take a little longer since there is an extra 
 
 Using information like this we're able to monitor the network and execution times of services to build an overall picture of how the application performs and make decisions on whether or not we need to make changes. For example, a consistent lag between services that need to perform functions very quickly together, such as a transaction processing application, might benefit more from dedicated hardware instead of allowing the Kubernetes scheduler to determine where pods should be placed across a large number of nodes. Since the scheduler has zero knowledge of the application performance, it cannot intelligently schedule pods without us instructing it to do so.
 
-## Exercise 4 - Service Mesh Application Debugging
+## Exercise 4 - Restricting Project Access with Authorization Policies
+
+
+
+
+
+## Exercise 5 - Service Mesh Application Debugging
 
 In this exercise, we'll look at using the Jaeger and Kiali tools we have deployed to debug a service that isn't running correctly. We'll deploy a new version (v2) of the details service that has an error in it.
 
